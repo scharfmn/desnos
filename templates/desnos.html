@@ -1,0 +1,31 @@
+{% extends 'event-base.html' %} 
+{% block inhead %}
+<title>event</title>
+<meta id="desnos-data" data-desnotic="{{desnotic}}"> 
+{% endblock %} 
+{% block provided_container %}
+<div class="col-xs-6 col-xs-offset-3 col1" id='box-sets'></div>
+{% endblock %} 
+{% block vanilla_js %}
+<script>
+  function get_random_element (datapoint) 
+  { 
+    return datapoint[Math.floor(Math.random() * datapoint.length)]; 
+  }
+</script>
+{% endblock %} 
+{% block scripts_after_jquery %}
+<script>
+$(document).ready(function() {
+  var desnos_data = $('#desnos-data').data('desnotic');
+  if (desnos_data) {
+    setInterval(function() {
+      var my_span = '<span>box_a</span><br><span>box_b</span><br><br>'
+      $('#box-sets').prepend(my_span.replace('box_a', get_random_element(desnos_data.box_a)).replace('box_b', get_random_element(desnos_data.box_b)))
+    }, 3000); // execute every 3 seconds
+  } else {
+    $('#box-sets').prepend('<p>Nothing available. Refresh the page in a bit.</p>')
+  }
+});
+</script>
+{% endblock %}
