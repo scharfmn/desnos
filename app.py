@@ -1,5 +1,6 @@
 import json
 import os
+import redis
 from collections import defaultdict
 from datetime import datetime
 from flask import Flask, render_template, flash, redirect, url_for, request, g, jsonify, current_app, Markup
@@ -11,22 +12,27 @@ app.secret_key = os.environ.get('FOR_DESNOS_ONLY')
 Bootstrap(app)
 CSRFProtect(app)
 
+cache = redis.StrictRedis(charset='utf-8', decode_responses=True)
+cache.flushdb() # DELETE BEFORE PRODUCTION
+TEXTBOX_A_KEY = 'box_a'
+TEXTBOX_B_KEY = 'box_b'
+QA_QUESTION_KEY = 'qa_q'
+QA_ANSWER_KEY = 'qa_a'
+COND_IF_KEY = 'cond_if'
+COND_THEN_KEY = 'cond_then'
 
-conditional_cache = defaultdict(lambda: defaultdict(list))
-qa_cache = defaultdict(lambda: defaultdict(list))
+QA_MAP = {TEXTBOX_A_KEY: QA_QUESTION_KEY, TEXTBOX_B_KEY: QA_ANSWER_KEY} 
+COND_MAP = {TEXTBOX_A_KEY: COND_IF_KEY, TEXTBOX_B_KEY: COND_THEN_KEY}
 
-def add_to_cache_on_post(request, cache, event_instance):
-    cache, items = qa_cache if cache == 'qa' else conditional_cache, []
-    for item_type in ('box_a', 'box_b'):
-        item = request.form.get(item_type, '').strip()
+def add_to_cache_on_post(request, event_map, event_instance):
+    for textbox, event_type in event_map.items():
+        item = request.form.get(textbox, '').strip()
         if item:
-            cache[event_instance][item_type].append(item)
-            items.append(item)
-    return True if items else False
+            cache.sadd(f'{event_instance}_{event_type}', item)
 
 @app.route('/<event_instance>/if-then', methods=['GET', 'POST'])
 def cond_input(event_instance):
-    success = add_to_cache_on_post(request, 'conditional', event_instance)
+    success = add_to_cache_on_post(request, COND_MAP, event_instance)
     return render_template(
         'input.html', 
         action=f'/{event_instance}/if-then',
@@ -40,12 +46,15 @@ def cond_input(event_instance):
 def cond_combine(event_instance):
     return render_template(
         'desnos.html', 
-        desnotic=json.dumps(dict(conditional_cache[event_instance]))
+        desnotic=json.dumps({
+            TEXTBOX_A_KEY: list(cache.smembers(f'{event_instance}_{COND_IF_KEY}')),
+            TEXTBOX_B_KEY: list(cache.smembers(f'{event_instance}_{COND_THEN_KEY}')),
+        })
     )
 
 @app.route('/<event_instance>/qa', methods=['GET', 'POST'])
 def qa_input(event_instance):
-    success = add_to_cache_on_post(request, 'qa', event_instance)
+    success = add_to_cache_on_post(request, QA_MAP, event_instance)
     return render_template(
         'input.html', 
         action=f'/{event_instance}/qa',
@@ -59,8 +68,11 @@ def qa_input(event_instance):
 def qa_combine(event_instance):
     return render_template(
         'desnos.html', 
-        desnotic=json.dumps(dict(qa_cache[event_instance]))
+        desnotic=json.dumps({
+            TEXTBOX_A_KEY: list(cache.smembers(f'{event_instance}_{QA_QUESTION_KEY}')),
+            TEXTBOX_B_KEY: list(cache.smembers(f'{event_instance}_{QA_ANSWER_KEY}')),
+        })
     )
 
 if __name__ == "__main__":
-    app.run(debuf=True)
+    app.run(host='0.0.0.0')
