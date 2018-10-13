@@ -1,5 +1,5 @@
 Flask
 Flask-Bootstrap
 Flask-WTF
-gunicorn
 redis
+gunicorn

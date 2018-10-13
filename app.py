@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import redis
 from collections import defaultdict
@@ -8,12 +9,14 @@ from flask_bootstrap import Bootstrap
 from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('FOR_DESNOS_ONLY')
+k = os.environ.get('FOR_DESNOS_ONLY', 'Testkey')
+app.config['SECRET_KEY'] = os.environ.get('FOR_DESNOS_ONLY', 'Testkey')
+logging.info(f'Secret key:{k}')
 Bootstrap(app)
 CSRFProtect(app)
 
-cache = redis.StrictRedis(charset='utf-8', decode_responses=True)
-cache.flushdb() # DELETE BEFORE PRODUCTION
+cache = redis.StrictRedis(charset='utf-8', decode_responses=True, host='redis', port=6379)
+#cache.flushdb() # DELETE BEFORE PRODUCTION
 TEXTBOX_A_KEY = 'box_a'
 TEXTBOX_B_KEY = 'box_b'
 QA_QUESTION_KEY = 'qa_q'
