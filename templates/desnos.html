@@ -1,6 +1,6 @@
 {% extends 'event-base.html' %} 
 {% block inhead %}
-<title>event</title>
+<title>desnos</title>
 <meta id="desnos-data" data-desnotic="{{desnotic}}"> 
 {% endblock %} 
 {% block provided_container %}
@@ -21,7 +21,7 @@ $(document).ready(function() {
   if (desnos_data) {
     setInterval(function() {
       var my_span = '<span>box_a</span><br><span>box_b</span><br><br>'
-      $('#box-sets').prepend(my_span.replace('box_a', get_random_element(desnos_data.box_a)).replace('box_b', get_random_element(desnos_data.box_b)))
+      $('#box-sets').append(my_span.replace('box_a', get_random_element(desnos_data.box_a)).replace('box_b', get_random_element(desnos_data.box_b)))
     }, 3000); // execute every 3 seconds
   } else {
     $('#box-sets').prepend('<p>Nothing available. Refresh the page in a bit.</p>')

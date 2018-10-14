@@ -1,15 +1,15 @@
 {% extends 'event-base.html' %}
 
 {% block inhead %}
-<title>q/a</title>
+<title>desnos</title>
 {% endblock %}
-
 {% block provided_container %}
-<h2>{{event}}</h2>
+  <h2>{{event[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event[1]}}</h2>
 <br>
-{% if success %}
-  <p>Success! Your text has been recorded.</p>
-{% endif %}
+{% for item in success %}
+  <span>saved: {{item}}</span><br>
+{% endfor %}
+<br>
 <br>
 <form method="POST" role="form" action="{{action}}" class='bare-bones-input' novalidate>
   <div class="form-group">

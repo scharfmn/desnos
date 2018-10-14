@@ -8,6 +8,9 @@
 *$py.class
 *,cover
 *.7z
+.now
+.now/
+*.now
 *.class
 *.com
 *.cover
