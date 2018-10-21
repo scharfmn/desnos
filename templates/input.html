@@ -16,18 +16,21 @@
     <label for="question-text">
       <h4>{{box_a}}</h4>
     </label>
-    <textarea class="form-control col-8" id="question-text" name="box_a" rows="3" placeholder="Text" required></textarea>
+    <textarea class="form-control col-8" id="question-text" name="box_a" rows="3" placeholder="Text" ></textarea>
     <div class="invalid-feedback">
-      Please enter some text.
+      Please enter some text
     </div>
   </div>
+  <br>
+  <hr class="half-rule"/>  
+  <br>
   <div class="form-group">
     <label for="answer-text">
       <h4>{{box_b}}</h4>
     </label>
-    <textarea class="form-control col-8" id="answer-text" name="box_b" rows="3" placeholder="Text" required></textarea>
+    <textarea class="form-control col-8" id="answer-text" name="box_b" rows="3" placeholder="Text" ></textarea>
     <div class="invalid-feedback">
-      Please enter some text.
+      Please enter some text
     </div>
   </div>
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
