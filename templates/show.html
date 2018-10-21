@@ -3,6 +3,8 @@
 <title>desnos</title>
 {% endblock %}
 {% block provided_container %}
+  <input class="btn btn-primary float-right" type="button" value="copy" onclick="copyToClipboard('#desnos-container')">
+
   <h2>{{event[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event[1]}}</h2>
 <br>
 <br>
@@ -15,5 +17,15 @@
 {% for item in all_b %}
   <span>{{item}}</span><br>
 {% endfor %}
-
+{% endblock %}
+{% block scripts_after_jquery %}
+<script>
+    function copyToClipboard(element) {
+      var $temp = $("<textarea>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+</script>
 {% endblock %}

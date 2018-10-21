@@ -2,6 +2,8 @@
 {% block inhead %}
 <title>desnos</title>
 <meta id="desnos-data" data-desnotic="{{desnotic}}"> 
+<style type="text/css">
+</style>
 {% endblock %} 
 {% block provided_container %}
 <div class="form-check float-right">
@@ -11,6 +13,7 @@
   </label>
 </div>
 <br>
+<input class="btn btn-primary float-right" type="button" value="copy" onclick="copyToClipboard('#box-sets')">
 <br>
 <div class="col-xs-6 col-xs-offset-3 col1" id='box-sets'></div>
 {% endblock %} 
@@ -37,5 +40,19 @@ $(document).ready(function() {
     $('#box-sets').prepend('<p>Nothing available. Refresh the page in a bit.</p>')
   }
 });
+</script>
+<script>
+    function copyToClipboard(element) {
+      var built = ''
+      var $temp = $("<textarea>");
+      $("body").append($temp);
+      var blocks = $(element).html().split('<br><br>')
+      for (const s of blocks) {
+        built += s.split("<span>").join('').split("</span>").join("").replace("<br>", "\n") + "\n\n"
+      }
+      $temp.val(built).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
 </script>
 {% endblock %}
