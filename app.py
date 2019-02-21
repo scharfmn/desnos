@@ -4,11 +4,14 @@ import redis
 from flask import Flask, render_template, flash, redirect, url_for, request, g, jsonify, current_app, Markup
 from flask_bootstrap import Bootstrap
 from flask_wtf.csrf import CSRFProtect
+#from test_data import TEST_DATA
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('FOR_DESNOS_ONLY', 'Testkey')
 Bootstrap(app)
 CSRFProtect(app)
+
+# redis-server /usr/local/etc/redis.conf
 
 if os.environ.get('REDIS_URL'): # Heroku
     cache = redis.from_url(os.environ['REDIS_URL'], charset='utf-8', decode_responses=True)
@@ -42,6 +45,9 @@ MAPS = {
 
 EVENT_NAMES = ['qa', 'if-then']
 
+#def retrieve(instance, key):
+#    return list(cache.smembers(f'{instance}_{textbox_map[key]}'))
+
 def add_to_cache_on_post(request, event_instance, event_name):
     items = []
     for textbox, event_type in MAPS[event_name]['textbox_map'].items():
@@ -72,13 +78,14 @@ def text_input(event_instance, event_name):
 
 @app.route('/<event_instance>/<event_name>/combine', methods=['GET'])
 def combine(event_instance, event_name):
-    textbox_map = MAPS[event_name]['textbox_map']
+    #textbox_map = MAPS[event_name]['textbox_map']
     return render_template(
         'desnos.html', 
         desnotic=json.dumps({
             TEXTBOX_A_KEY: list(cache.smembers(f'{event_instance}_{textbox_map[TEXTBOX_A_KEY]}')),
             TEXTBOX_B_KEY: list(cache.smembers(f'{event_instance}_{textbox_map[TEXTBOX_B_KEY]}')),
         })
+        #desnotic=json.dumps(TEST_DATA)
     )
 
 @app.route('/<event_instance>/<event_name>/show', methods=['GET'])

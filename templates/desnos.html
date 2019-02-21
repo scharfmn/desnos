@@ -19,27 +19,43 @@
 {% endblock %} 
 {% block vanilla_js %}
 <script>
-  function get_random_element (datapoint) 
-  { 
-    return datapoint[Math.floor(Math.random() * datapoint.length)]; 
-  }
+function shuffleIndices(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+  return array
+}
 </script>
 {% endblock %} 
 {% block scripts_after_jquery %}
 <script>
 $(document).ready(function() {
-  var desnos_data = $('#desnos-data').data('desnotic');
-  if (desnos_data.box_a.length != 0 && desnos_data.box_b.length != 0) {
+  const desnosText = $('#desnos-data').data('desnotic')
+  var rangeA, rangeB
+
+  // console.log(rangeA, rangeB)
+
+  if (desnosText.box_a.length != 0 && desnosText.box_b.length != 0) {
     setInterval(function() {
       var my_span = '<span>box_a</span><br><span>box_b</span><br><br>'
       if ($('#defaultCheck1').prop("checked") == false) {
-        $('#box-sets').append(my_span.replace('box_a', get_random_element(desnos_data.box_a)).replace('box_b', get_random_element(desnos_data.box_b)))
+        if (!rangeA || rangeA.length === 0) {
+          var indices_a = Array(desnosText.box_a.length).fill(0).map((x, y) => x + y)
+          rangeA = shuffleIndices(indices_a)
+        }
+        if (!rangeB || rangeB.length === 0) {
+          var indices_b = Array(desnosText.box_b.length).fill(0).map((x, y) => x + y)
+          rangeB = shuffleIndices(indices_b)
+        }
+        console.log(rangeA, rangeB)
+        $('#box-sets').append(my_span.replace('box_a', desnosText.box_a[rangeA.pop()]).replace('box_b', desnosText.box_b[rangeB.pop()]))
       }
     }, 3000); // execute every 3 seconds
   } else {
     $('#box-sets').prepend('<p>Nothing available. Refresh the page in a bit.</p>')
   }
-});
+})
 </script>
 <script>
     function copyToClipboard(element) {
@@ -54,5 +70,7 @@ $(document).ready(function() {
       document.execCommand("copy");
       $temp.remove();
     }
+// 
 </script>
 {% endblock %}
+
