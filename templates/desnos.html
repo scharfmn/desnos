@@ -1,7 +1,7 @@
 {% extends 'event-base.html' %} 
 {% block inhead %}
 <title>desnos</title>
-<meta id="desnos-data" data-desnotic="{{desnotic}}"> 
+<meta id="langauge-event-data" data-combtext="{{text_to_combine}}"> 
 <style type="text/css">
 </style>
 {% endblock %} 
@@ -19,10 +19,10 @@
 {% endblock %} 
 {% block vanilla_js %}
 <script>
-function shuffleIndices(array) {
+function shuffle(array) {  //https://stackoverflow.com/a/6274381/1599229 
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [array[i], array[j]] = [array[j], array[i]];  // destructive assignment is slow, but this is called v infrequently
     }
   return array
 }
@@ -31,28 +31,22 @@ function shuffleIndices(array) {
 {% block scripts_after_jquery %}
 <script>
 $(document).ready(function() {
-  const desnosText = $('#desnos-data').data('desnotic')
-  var rangeA, rangeB
-
-  // console.log(rangeA, rangeB)
-
-  if (desnosText.box_a.length != 0 && desnosText.box_b.length != 0) {
+  const textToCombine = $('#langauge-event-data').data('combtext')  
+  var indices = {}
+  if (true) { // TODO: check for text
     setInterval(function() {
-      var my_span = '<span>box_a</span><br><span>box_b</span><br><br>'
-      if ($('#defaultCheck1').prop("checked") == false) {
-        if (!rangeA || rangeA.length === 0) {
-          var indices_a = Array(desnosText.box_a.length).fill(0).map((x, y) => x + y)
-          rangeA = shuffleIndices(indices_a)
+      if ($('#defaultCheck1').prop("checked") == false) { // if we are not paused
+        for (var key in textToCombine) { // check to see if any text indices need replenishing
+          if (!indices[key] || indices[key].length === 0) {
+            indices[key] = Array(textToCombine[key].length).fill(0).map((x, y) => x + y)
+          indices[key] = shuffle(indices[key])
+          }
+          $('#box-sets').append('<span>REPLACE</span><br>'.replace('REPLACE', textToCombine[key][indices[key].pop()]))
         }
-        if (!rangeB || rangeB.length === 0) {
-          var indices_b = Array(desnosText.box_b.length).fill(0).map((x, y) => x + y)
-          rangeB = shuffleIndices(indices_b)
-        }
-        console.log(rangeA, rangeB)
-        $('#box-sets').append(my_span.replace('box_a', desnosText.box_a[rangeA.pop()]).replace('box_b', desnosText.box_b[rangeB.pop()]))
+        $('#box-sets').append('<br><br>')
       }
     }, 3000); // execute every 3 seconds
-  } else {
+  } else { 
     $('#box-sets').prepend('<p>Nothing available. Refresh the page in a bit.</p>')
   }
 })

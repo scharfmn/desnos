@@ -5,17 +5,16 @@
 {% block provided_container %}
   <input class="btn btn-outline-dark btn-sm float-right" type="button" value="copy" onclick="copyToClipboard('#desnos-container')">
 
-  <h2>{{event[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event[1]}}</h2>
+  <h2>{{event_text[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event_text[1]}}</h2>
 <br>
 <br>
-<h2>All {{box_a}}s</h2>
-{% for item in all_a %}
-  <span>{{item}}</span><br>
-{% endfor %}
+{% for key, texts in text_for_display.items() %}
+<h2>All {{key}}s</h2>
+  {% for item in texts %}
+      <span>{{item}}</span><br>
+  {% endfor %}
 <br>
-<h2>All {{box_b}}s</h2>
-{% for item in all_b %}
-  <span>{{item}}</span><br>
+<br>
 {% endfor %}
 {% endblock %}
 {% block scripts_after_jquery %}

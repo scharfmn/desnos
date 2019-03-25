@@ -4,7 +4,7 @@
 <title>desnos</title>
 {% endblock %}
 {% block provided_container %}
-  <h2>{{event[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event[1]}}</h2>
+  <h2>{{event_text[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{event_text[1]}}</h2>
 <br>
 {% for item in success %}
   <span>saved: {{item}}</span><br>
@@ -12,29 +12,22 @@
 <br>
 <br>
 <form method="POST" role="form" action="{{action}}" class='bare-bones-input' novalidate>
+{% for box_name, name_text in textboxes.items() %}
   <div class="form-group">
     <label for="question-text">
-      <h4>{{box_a}}</h4>
+      <h4>{{name_text}}</h4>
     </label>
-    <textarea class="form-control col-8" id="question-text" name="box_a" rows="3" placeholder="Text" ></textarea>
+    <textarea class="form-control col-8" id="{{box_name}}" name="{{box_name}}" rows="3" placeholder="Text" ></textarea>
     <div class="invalid-feedback">
       Please enter some text
     </div>
   </div>
   <br>
-  <div class="col-8">
+<!--   <div class="col-8">
     <hr class="half-rule"/>  
   </div>
-  <br>
-  <div class="form-group">
-    <label for="answer-text">
-      <h4>{{box_b}}</h4>
-    </label>
-    <textarea class="form-control col-8" id="answer-text" name="box_b" rows="3" placeholder="Text" ></textarea>
-    <div class="invalid-feedback">
-      Please enter some text
-    </div>
-  </div>
+  <br> -->
+{% endfor %}
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
   <br>
   <button type="submit" class="btn btn-primary">Submit Text</button>
