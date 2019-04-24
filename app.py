@@ -30,15 +30,15 @@ EVENT_TITLE_TEXT = 'event_text'
 
 EVENTS = {
     'qa': {
-        TEXTBOXES: {textbox_key('a'): 'Question', textbox_key('b'): 'Answer',},
-        EVENT_TITLE_TEXT: ['language event:', 'question · answer'], 
+        TEXTBOXES: {textbox_key('a'): 'question', textbox_key('b'): 'answer',},
+        EVENT_TITLE_TEXT: ['language event', 'question · answer'], 
     },
     'if-then': {
-        TEXTBOXES: {textbox_key('a'): 'If (or when)', textbox_key('b'): 'then',},
-        EVENT_TITLE_TEXT: ['language event:', 'if · then'],
+        TEXTBOXES: {textbox_key('a'): 'if (or when)', textbox_key('b'): 'then',},
+        EVENT_TITLE_TEXT: ['language event', 'if · then'],
     },
     'after': {
-        TEXTBOXES: {textbox_key('a'): 'After', textbox_key('b'): '(...)'},
+        TEXTBOXES: {textbox_key('a'): 'after', textbox_key('b'): '(...)'},
         EVENT_TITLE_TEXT: ['language event', 'Nihaal Prasad’s “After”'],
     },
 }
