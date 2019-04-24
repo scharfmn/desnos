@@ -52,12 +52,11 @@ def add_to_cache_on_post(request, instance_id, event_id):
             success.append(item)
     return success
 
-def get_all_members(instance_id, event_id):
-    try:
-        text_to_combine = { key: list(cache.smembers(f'{instance_id}_{key}')) 
+def retrieve_instance_data(instance_id, event_id):
+    text_to_combine = { key: list(cache.smembers(f'{instance_id}_{key}')) 
             for key in EVENTS[event_id][TEXTBOXES]
-        }
-    except KeyError:
+    }
+    if not all(text_to_combine.values()): # if missing data  - show test data
         text_to_combine = TEST_DATA # TODO: redirect to failure but show something for now
     return text_to_combine
 
@@ -74,12 +73,12 @@ def text_input(instance_id, event_id):
 
 @app.route('/<instance_id>/<event_id>/combine', methods=['GET'])
 def combine(instance_id, event_id):
-    text_to_combine = get_all_members(instance_id, event_id)
+    text_to_combine = retrieve_instance_data(instance_id, event_id)
     return render_template('desnos.html', text_to_combine=json.dumps(text_to_combine))
 
 @app.route('/<instance_id>/<event_id>/show', methods=['GET'])
 def show(instance_id, event_id):
-    all_texts = get_all_members(instance_id, event_id)
+    all_texts = retrieve_instance_data(instance_id, event_id)
     text_for_display = {EVENTS[event_id][TEXTBOXES][key]: sorted(texts) for key, texts in all_texts.items() }
     return render_template(
         'show.html',
