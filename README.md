@@ -1,4 +1,4 @@
-# desnos
+# Desnos: Language Event 1 and Language Event 2 as adapted by Vivek Narayanan
 
 An application version of Robert Desnos' Language Event 1 and Language Event 2 as adapted for the classroom by Vivek Narayanan
 
@@ -10,30 +10,39 @@ Try this one (which shows pre-loaded text as a demo):
 
 - https://desnos.herokuapp.com/demo/qa/combine
 
-
-## The question / answer language event:
- - https://desnos.herokuapp.com/{some-random-id}/qa/add
- - https://desnos.herokuapp.com/{some-random-id}/qa/combine
- - https://desnos.herokuapp.com/{some-random-id}/qa/show
-
-## The if (or when) / then language event:
- - https://desnos.herokuapp.com/{some-random-id}/if-then/add
- - https://desnos.herokuapp.com/{some-random-id}/if-then/combine
- - https://desnos.herokuapp.com/{some-random-id}/if-then/show
-
-The "add" endpoints allow anyone to send text to the event
-
-The "combine" endpoints randomly combine the text sent into the event in couplets. All text is used once before it can appear again.
-
-The "show" endpoints show all of the text that has been contributed
-
-There is a pause button on the "combine" pages, and also a facility to pasting the poem into the text clipboard for pasting into a document.
-
 ## Inspiration
 
 ![original language event 1](https://storage.googleapis.com/mns/desnos_1a.png)
 
 ![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
+
+## The question / answer language event:
+The "add" endpoints allow anyone with the URL to send text to the event:
+ - https://desnos.herokuapp.com/{some-random-id}/qa/add
+ 
+The "combine" endpoints randomly combine the text sent into the event in couplets: 
+ - https://desnos.herokuapp.com/{some-random-id}/qa/combine
+
+The "show" endpoints show all of the text that has been contributed:
+ - https://desnos.herokuapp.com/{some-random-id}/qa/show
+
+## The if (or when) / then language event:
+The "add" endpoints allow anyone with the URL to send text to the event:
+ - https://desnos.herokuapp.com/{some-random-id}/if-then/add
+ 
+The "combine" endpoints randomly combine the text sent into the event in couplets: 
+ - https://desnos.herokuapp.com/{some-random-id}/if-then/combine
+ 
+The "show" endpoints show all of the text that has been contributed:
+ - https://desnos.herokuapp.com/{some-random-id}/if-then/show
+
+All text is used once before it can appear again
+
+Each user using the "combine" endpoint will see a different version of the poem
+
+The "show" endpoints show all of the text that has been contributed
+
+There is a pause button on the "combine" pages, and also a facility to pasting the poem into the text clipboard for pasting into a document
 
 ## Background
 
