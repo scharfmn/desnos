@@ -6,11 +6,11 @@
 
 code by scharfmn
 
-An application version of Robert Desnos' Language Event 1 and Language Event 2 as adapted for the classroom by Vivek Narayanan, with code by scharfmn
+## Introduction
 
-In this version of Desnos' language events, the user creates a specific language “event” by making up something unique for the “some-random-id” field.
+Desnos is an application version of Robert Desnos' Language Event 1 and Language Event 2 as adapted for the classroom by Vivek Narayanan, with code by scharfmn
 
-The instructor should change {some-random-id} to whatever makes sense for that session: each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, such as instructor-name-2020-09-25
+In this version of Desnos' language events, the user creates a specific language “event” for a class meeting. Students contribute text in real-time, which is then combined into a poem in real-time. Can be done in-person or remote.
 
 Try this one (which shows pre-loaded text as a demo):
 
@@ -44,9 +44,15 @@ The "show" endpoints show all of the text that has been contributed:
 
 ### Notes
 
-All text is used once before it can appear again
+Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing {some-random-id} with something like instructor-name-2020-09-25
+
+Can change {some-random-id} to whatever makes sense for you and as long as it is valid for a URL 
+
+All text received for the session is used once before it can appear again in any combine operation
 
 Each user using the "combine" endpoint will see a different version of the poem
+
+Usually there is a set period where people enter text before a separate "combine" point
 
 The "show" endpoints show all of the text that has been contributed
 
