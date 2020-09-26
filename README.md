@@ -1,4 +1,4 @@
-# Desnos: Language Events
+# Robert Desnos' Language Events
 
 ## an Experiment in Free-Tier Poetry Pegagogy
 
