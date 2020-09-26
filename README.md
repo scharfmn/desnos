@@ -2,7 +2,7 @@
 
 ## an Experiment in Free-Tier Poetry Pegagogy
 
-### by Vivek Narayanan
+### designed for the classroom by Vivek Narayanan
 
 code by scharfmn
 
