@@ -22,7 +22,7 @@ Try this one (which shows pre-loaded text as a demo):
 
 ![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
 
-## question -> answer language event:
+## question → answer language event:
 The "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/{some-random-id}/qa/add
  
@@ -32,7 +32,7 @@ The "combine" endpoints randomly combine the text sent into the event in couplet
 The "show" endpoints show all of the text that has been contributed:
  - https://desnos.herokuapp.com/{some-random-id}/qa/show
 
-## if/when -> then language event:
+## if/when → then language event:
 The "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/{some-random-id}/if-then/add
  
