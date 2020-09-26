@@ -4,7 +4,7 @@
 
 ### designed for the classroom by Vivek Narayanan
 
-code by scharfmn
+with code by scharfmn
 
 ## Introduction
 
