@@ -1,4 +1,6 @@
-# Desnos: Language Event 1 and Language Event 2 as adapted by Vivek Narayanan
+# Desnos: Language Event 1 and Language Event 2 
+
+# as adapted by Vivek Narayanan with code by scharfmn
 
 An application version of Robert Desnos' Language Event 1 and Language Event 2 as adapted for the classroom by Vivek Narayanan
 
@@ -35,6 +37,8 @@ The "combine" endpoints randomly combine the text sent into the event in couplet
  
 The "show" endpoints show all of the text that has been contributed:
  - https://desnos.herokuapp.com/{some-random-id}/if-then/show
+
+### Notes
 
 All text is used once before it can appear again
 
