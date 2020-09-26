@@ -6,15 +6,20 @@ In this version of Desnos' language events, the user creates a specific language
 
 The instructor should change {some-random-id} to whatever makes sense for that session: each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, such as instructor-name-2020-09-25
 
+Try this one (which shows pre-loaded text as a demo):
+
+- https://desnos.herokuapp.com/demo/qa/combine
+
+
 ## The question / answer language event:
- - http://desnos.herokuapp.com/{some-random-id}/qa/add
- - http://desnos.herokuapp.com/{some-random-id}/qa/combine
- - http://desnos.herokuapp.com/{some-random-id}/qa/show
+ - https://desnos.herokuapp.com/{some-random-id}/qa/add
+ - https://desnos.herokuapp.com/{some-random-id}/qa/combine
+ - https://desnos.herokuapp.com/{some-random-id}/qa/show
 
 ## The if (or when) / then language event:
- - http://desnos.herokuapp.com/{some-random-id}/if-then/add
- - http://desnos.herokuapp.com/{some-random-id}/if-then/combine
- - http://desnos.herokuapp.com/{some-random-id}/if-then/show
+ - https://desnos.herokuapp.com/{some-random-id}/if-then/add
+ - https://desnos.herokuapp.com/{some-random-id}/if-then/combine
+ - https://desnos.herokuapp.com/{some-random-id}/if-then/show
 
 The "add" endpoints allow anyone to send text to the event
 
@@ -26,7 +31,7 @@ There is a pause button on the "combine" pages, and also a facility to pasting t
 
 ## Inspiration
 
-![original language event 1](https://storage.googleapis.com/mns/desnos_1.png)
+![original language event 1](https://storage.googleapis.com/mns/desnos_1a.png)
 
 ![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
 
