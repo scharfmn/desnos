@@ -1,6 +1,6 @@
 # Desnos: Language Events
 
-## An Experiment in Free-Tier Poetry Pegagogy
+## an Experiment in Free-Tier Poetry Pegagogy
 
 ### adapted for the classroom by Vivek Narayanan
 
