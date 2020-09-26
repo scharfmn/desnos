@@ -2,7 +2,9 @@
 
 ## an Experiment in Free-Tier Poetry Pegagogy
 
-### adapted for the classroom by Vivek Narayanan
+### by Vivek Narayanan
+
+code by scharfmn
 
 An application version of Robert Desnos' Language Event 1 and Language Event 2 as adapted for the classroom by Vivek Narayanan, with code by scharfmn
 
