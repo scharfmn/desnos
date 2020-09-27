@@ -1,23 +1,11 @@
 import json
 import os
-from flask import (
-    Flask,
-    render_template,
-    flash,
-    redirect,
-    url_for,
-    request,
-    g,
-    jsonify,
-    current_app,
-    Markup,
-)
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_wtf.csrf import CSRFProtect
 from cache import get_cache
 from config import (
     TEXTBOXES,
-    LABELS,
     EVENTS,
     EVENT_TITLE_TEXT,
     TEST_DATA
@@ -84,5 +72,4 @@ def show(instance_id, event_id):
 
 
 if __name__ == "__main__":
-    #app.run(host='0.0.0.0')
     app.run()
