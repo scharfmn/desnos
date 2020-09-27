@@ -89,4 +89,8 @@ The first time Narayanan used the app in the classroom, in the Fall of 2018, the
 A George Mason student, Nihaal Prasad, contributed a third language event, also implemented here in the same manner: after:
  - https://desnos.herokuapp.com/demo/after/add
 
-I ended up naming our Heroku deployment desnos, rather than Narayanan or language_events, but it doesn’t feel right. The current endpoints should still be deployed and available. (Note: free-tier Heroku Redis says that it does not persist: it self-erases after 24 hours if one does not upgrade to a non-free tier.) 
+I ended up naming our Heroku deployment desnos, rather than Narayanan or language_events, but it doesn’t feel right. 
+
+The current endpoints should still be deployed and available for up 1000 hours of use a month. The app "sleeps" after 30 mins of inactivity, and takes about 20 seconds to come up on an initial request following an inactive period. Free-tier Heroku Redis says that it does not persist: it self-erases after 24 hours if one does not upgrade to a non-free tier. 
+
+Enjoy!
