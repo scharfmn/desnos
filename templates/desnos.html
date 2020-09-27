@@ -55,8 +55,9 @@ $(document).ready(function() {
       $("body").append($temp);
       var blocks = $(element).html().split('<br><br>')
       for (const s of blocks) {
-        built += s.split("<span>").join('').split("</span>").join("").replace("<br>", "\n") + "\n\n"
+        built += s.replaceAll("<br>", "\n").split("<span>").join('').split("</span>").join("") + "\n\n"
       }
+      built = built.substring(0, built.length-2)
       $temp.val(built).select();
       document.execCommand("copy");
       $temp.remove();
