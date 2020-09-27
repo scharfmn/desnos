@@ -86,4 +86,7 @@ After a demo for Narayanan, he asked that I add an easy way for him to cut the d
 
 The first time Narayanan used the app in the classroom, in the Fall of 2018, the pseudo-random line picking operation gave a lot of repeated entrees, and some entries didn’t get used at all. This disappointed some students greatly. For the second iteration, I changed the line picking such that once a pseudo-random element has been chosen for combination and display, it cannot not be chosen again until all the elements from that set of responses have been shown. That fixed it.
 
+A George Mason student, Nihaal Prasad, contributed a third language event, also implemented here in the same manner: after:
+ - https://desnos.herokuapp.com/demo/after/add
+
 I ended up naming our Heroku deployment desnos, rather than Narayanan or language_events, but it doesn’t feel right. The current endpoints should still be deployed and available. (Note: free-tier Heroku Redis says that it does not persist: it self-erases after 24 hours if one does not upgrade to a non-free tier.) 
