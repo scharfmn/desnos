@@ -8,9 +8,9 @@ with code by scharfmn
 
 ## Introduction
 
-Desnos is an application version of Robert Desnos' Language Event 1 and Language Event 2 as adapted for the classroom
+Desnos is an application version of Robert Desnos' Language Event 1 and Language Event 2 adapted for the classroom
 
-In this version of Desnos' language events, the user creates a specific language “event” for a class meeting. Students contribute text in real-time, which is then combined into a poem in real-time. Can be done in-person or remote.
+In this version of Desnos' language events, the user creates a specific language “event” for a class meeting. Students contribute text in real-time, and their contributions are then combined into a poem in real-time. Can be done in-person or remote.
 
 Try this one (which shows pre-loaded text as a demo):
 
