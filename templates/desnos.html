@@ -6,14 +6,11 @@
 </style>
 {% endblock %} 
 {% block provided_container %}
-<div class="form-check float-right">
-  <input class="form-check-input" type="checkbox" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
-    pause
-  </label>
+<div class="float-right">
+<label class="checkbox-inline"><input type="checkbox" id="defaultCheck1" value=""> pause</label>
+&nbsp;
+<input class="btn btn-sm" type="button" value="copy" onclick="copyToClipboard('#box-sets')">
 </div>
-<br>
-<input class="btn btn-outline-dark btn-sm float-right" type="button" value="copy" onclick="copyToClipboard('#box-sets')">
 <br>
 <div class="col-xs-6 col-xs-offset-3 col1" id='box-sets'></div>
 {% endblock %} 
