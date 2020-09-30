@@ -30,7 +30,7 @@ https://desnos.herokuapp.com/your-unique-event-name/if-then/add
 
 Replace _your-unique-event-name_ with your unique id, and you're all set.
 
-## Language Event 1: if/when → then:
+## Language Event 1  ·  if/when → then:
 The "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/add
  
@@ -40,7 +40,7 @@ The "combine" endpoint randomly combines the text sent into the event in couplet
 The "show" endpoints show all of the text that has been contributed:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/show
 
-## Language Event 2: question → answer
+## Language Event 2  ·  question → answer
 It works exactly the same way: the "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/your-unique-event-name/qa/add
  
