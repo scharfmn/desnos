@@ -22,35 +22,41 @@ Try this one (which shows pre-loaded text as a demo):
 
 ![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
 
+## Directions
+
+The uniqueness of each "event" is established via a set of three URLs anchored by a unique id that you make up on the spot, and distribute to the participants in the event. There are two main possible events, based on Language Event 1 and Language Event 2: 
+
 ## question → answer language event:
 The "add" endpoints allow anyone with the URL to send text to the event:
- - https://desnos.herokuapp.com/instructor-name-2020-09-25/qa/add
+ - https://desnos.herokuapp.com/your-unique-event-name/qa/add
  
 The "combine" endpoints randomly combine the text sent into the event in couplets: 
- - https://desnos.herokuapp.com/instructor-name-2020-09-25/qa/combine
+ - https://desnos.herokuapp.com/your-unique-event-name/qa/combine
 
 The "show" endpoints show all of the text that has been contributed:
- - https://desnos.herokuapp.com/instructor-name-2020-09-25/qa/show
+ - https://desnos.herokuapp.com/your-unique-event-name/qa/show
 
 ## if/when → then language event:
 The "add" endpoints allow anyone with the URL to send text to the event:
- - https://desnos.herokuapp.com/instructor-name-2020-09-25/if-then/add
+ - https://desnos.herokuapp.com/your-unique-event-name/if-then/add
  
 The "combine" endpoints randomly combine the text sent into the event in couplets: 
- - https://desnos.herokuapp.com/instructor-name-2020-09-25/if-then/combine
+ - https://desnos.herokuapp.com/your-unique-event-name/if-then/combine
  
 The "show" endpoints show all of the text that has been contributed:
- - https://desnos.herokuapp.com/instructor-name-2020-09-25/if-then/show
+ - https://desnos.herokuapp.com/your-unique-event-name/if-then/show
 
 ### Notes
 
-Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing _instructor-name-2020-09-25_ with anything you like etc.: 
+The app is designed to work without a login and without anyone having to do anything other than come up with one unique name for the event, such as _viveks-class-2020-09-25_ or _mike-take-1_
 
-https://desnos.herokuapp.com/viveks-class-2020-09-27/qa/add
+Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing _your-unique-event-name_ with anything you like: 
 
-https://desnos.herokuapp.com/mikes-class-2020-09-28/qa/add 
+https://desnos.herokuapp.com/birds-now/qa/add
 
-Again, to have your class's event be just your class, change _instructor-name-2020-09-25_ to whatever makes sense for you (as long as it is valid for a URL) 
+https://desnos.herokuapp.com/happy-day/qa/add 
+
+Again, changing _our-unique-event-name_ to whatever makes sense for you (as long as it is valid for a URL), allows your class's event to be just your class, but the only security is the uniqueness of the name itself -- anyone with the URL will be able to access the event
 
 All text received for the session is used once before it can appear again in any combine operation
 
