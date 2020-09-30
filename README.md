@@ -24,20 +24,24 @@ Try this one (which shows pre-loaded text as a demo):
 
 ## Directions
 
-The uniqueness of each "event" is established via a set of three URLs anchored by a unique id that you make up on the spot, and distribute to the participants in the event. There are two main possible events, based on Language Event 1 and Language Event 2: 
+There are two main possible events to host, one based on Language Event 1 and one based on Language Event 2. The uniqueness of each hosted "event" is established via a set of three URLs. The three URLs are anchored by a unique id that you make up on the spot, and distribute to the participants in the event. The one you want to start with is the "add" endpoint. Create a unique id that is valid for URL-embedded text, and create the event URL like this:
+
+https://desnos.herokuapp.com/your-unique-event-name/if-then/add
+
+Replace _your-unique-event-name_ with your unique id, and you're all set.
 
 ## Language Event 1: if/when → then:
 The "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/add
  
-The "combine" endpoints randomly combine the text sent into the event in couplets: 
+The "combine" endpoint randomly combines the text sent into the event in couplets: 
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/combine
  
 The "show" endpoints show all of the text that has been contributed:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/show
 
 ## Language Event 2: question → answer
-The "add" endpoints allow anyone with the URL to send text to the event:
+It works exactly the same way: the "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/your-unique-event-name/qa/add
  
 The "combine" endpoints randomly combine the text sent into the event in couplets: 
@@ -48,7 +52,7 @@ The "show" endpoints show all of the text that has been contributed:
 
 ### Notes
 
-The app is designed to work without a login and without anyone having to do anything other than come up with one unique name for the event, such as _viveks-class-2020-09-25_ or _mike-take-1_
+The app is designed to work without a login and without anyone having to do anything other than come up with the one unique name for the event (such as _viveks-class-2020-09-25_ or _mike-take-1_, to give more examples)
 
 Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing _your-unique-event-name_ with anything you like: 
 
@@ -56,17 +60,17 @@ https://desnos.herokuapp.com/birds-now/qa/add
 
 https://desnos.herokuapp.com/happy-day/qa/add 
 
-Again, changing _our-unique-event-name_ to whatever makes sense for you (as long as it is valid for a URL), allows your class's event to be just your class, but the only security is the uniqueness of the name itself -- anyone with the URL will be able to access the event
+Changing _our-unique-event-name_ to whatever makes sense for you (as long as it is valid for a URL), allows your class's event to be just your class, but the only security is the uniqueness of the name itself -- anyone with the URL will be able to access the event
 
 All text received for the session is used once before it can appear again in any combine operation
 
 Each user using the "combine" endpoint will see a different version of the poem
 
-Usually there is a set period where people enter text before a separate "combine" point
+Usually there is a set period where people enter text before a separate "combine" point where a chosen person presents the "combine" page
 
 The "show" endpoints show all of the text that has been contributed
 
-There is a pause button on the "combine" pages, and also a facility to pasting the poem into the text clipboard for pasting into a document
+There is a pause button on the "combine" pages, and also a facility for copy-pasting the poem into the text clipboard for pasting and savig into a document
 
 ## Background
 
@@ -98,6 +102,8 @@ The first time Narayanan used the app in the classroom, in the Fall of 2018, the
 
 A George Mason student, Nihaal Prasad, contributed a third language event, also implemented here in the same manner: after:
  - https://desnos.herokuapp.com/demo/after/add
+ 
+The code is such that it is easy to add more two-box events with different prompts (![send a feature request or pull request!](https://github.com/scharfmn/desnos/issues)).
 
 I ended up naming our Heroku deployment desnos, rather than Narayanan or language_events, but it doesn’t feel right. 
 
