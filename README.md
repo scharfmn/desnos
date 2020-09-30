@@ -26,17 +26,7 @@ Try this one (which shows pre-loaded text as a demo):
 
 The uniqueness of each "event" is established via a set of three URLs anchored by a unique id that you make up on the spot, and distribute to the participants in the event. There are two main possible events, based on Language Event 1 and Language Event 2: 
 
-## question → answer language event:
-The "add" endpoints allow anyone with the URL to send text to the event:
- - https://desnos.herokuapp.com/your-unique-event-name/qa/add
- 
-The "combine" endpoints randomly combine the text sent into the event in couplets: 
- - https://desnos.herokuapp.com/your-unique-event-name/qa/combine
-
-The "show" endpoints show all of the text that has been contributed:
- - https://desnos.herokuapp.com/your-unique-event-name/qa/show
-
-## if/when → then language event:
+## Language Event 1: if/when → then:
 The "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/add
  
@@ -45,6 +35,16 @@ The "combine" endpoints randomly combine the text sent into the event in couplet
  
 The "show" endpoints show all of the text that has been contributed:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/show
+
+## Language Event 2: question → answer
+The "add" endpoints allow anyone with the URL to send text to the event:
+ - https://desnos.herokuapp.com/your-unique-event-name/qa/add
+ 
+The "combine" endpoints randomly combine the text sent into the event in couplets: 
+ - https://desnos.herokuapp.com/your-unique-event-name/qa/combine
+
+The "show" endpoints show all of the text that has been contributed:
+ - https://desnos.herokuapp.com/your-unique-event-name/qa/show
 
 ### Notes
 
