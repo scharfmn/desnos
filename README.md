@@ -44,15 +44,13 @@ The "show" endpoints show all of the text that has been contributed:
 
 ### Notes
 
-Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing instructor-name-2020-09-25 with anything you like: 
+Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing _instructor-name-2020-09-25_ with anything you like etc.: 
 
 https://desnos.herokuapp.com/viveks-class-2020-09-27/qa/add
 
 https://desnos.herokuapp.com/mikes-class-2020-09-28/qa/add 
 
-etc.
- 
-Can change _instructor-name-2020-09-25_ to whatever makes sense for you and as long as it is valid for a URL 
+Again, to have your class's event be just your class, change _instructor-name-2020-09-25_ to whatever makes sense for you (as long as it is valid for a URL) 
 
 All text received for the session is used once before it can appear again in any combine operation
 
