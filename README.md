@@ -44,7 +44,13 @@ The "show" endpoints show all of the text that has been contributed:
 
 ### Notes
 
-Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing instructor-name-2020-09-25 with anything you like: https://desnos.herokuapp.com/viveks-class-2020-09-27/qa/add or https://desnos.herokuapp.com/mikes-class-2020-09-28/qa/add etc.
+Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing instructor-name-2020-09-25 with anything you like: 
+
+https://desnos.herokuapp.com/viveks-class-2020-09-27/qa/add
+
+https://desnos.herokuapp.com/mikes-class-2020-09-28/qa/add 
+
+etc.
  
 Can change _instructor-name-2020-09-25_ to whatever makes sense for you and as long as it is valid for a URL 
 
