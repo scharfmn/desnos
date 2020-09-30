@@ -24,29 +24,29 @@ Try this one (which shows pre-loaded text as a demo):
 
 ## question → answer language event:
 The "add" endpoints allow anyone with the URL to send text to the event:
- - https://desnos.herokuapp.com/{some-random-id}/qa/add
+ - https://desnos.herokuapp.com/instructor-name-2020-09-25/qa/add
  
 The "combine" endpoints randomly combine the text sent into the event in couplets: 
- - https://desnos.herokuapp.com/{some-random-id}/qa/combine
+ - https://desnos.herokuapp.com/instructor-name-2020-09-25/qa/combine
 
 The "show" endpoints show all of the text that has been contributed:
- - https://desnos.herokuapp.com/{some-random-id}/qa/show
+ - https://desnos.herokuapp.com/instructor-name-2020-09-25/qa/show
 
 ## if/when → then language event:
 The "add" endpoints allow anyone with the URL to send text to the event:
- - https://desnos.herokuapp.com/{some-random-id}/if-then/add
+ - https://desnos.herokuapp.com/instructor-name-2020-09-25/if-then/add
  
 The "combine" endpoints randomly combine the text sent into the event in couplets: 
- - https://desnos.herokuapp.com/{some-random-id}/if-then/combine
+ - https://desnos.herokuapp.com/instructor-name-2020-09-25/if-then/combine
  
 The "show" endpoints show all of the text that has been contributed:
- - https://desnos.herokuapp.com/{some-random-id}/if-then/show
+ - https://desnos.herokuapp.com/instructor-name-2020-09-25/if-then/show
 
 ### Notes
 
-Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing {some-random-id} with something like instructor-name-2020-09-25
-
-Can change {some-random-id} to whatever makes sense for you and as long as it is valid for a URL 
+Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing instructor-name-2020-09-25 with anything you like: https://desnos.herokuapp.com/viveks-class-2020-09-27/qa/add or https://desnos.herokuapp.com/mikes-class-2020-09-28/qa/add etc.
+ 
+Can change _instructor-name-2020-09-25_ to whatever makes sense for you and as long as it is valid for a URL 
 
 All text received for the session is used once before it can appear again in any combine operation
 
