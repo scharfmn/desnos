@@ -30,7 +30,7 @@ https://desnos.herokuapp.com/your-unique-event-name/if-then/add
 
 Replace _your-unique-event-name_ with your unique id, and you're all set.
 
-## Language Event 1  ·  if/when → then:
+## Language Event 1  ·  if (or when) → then:
 The "add" endpoints allow anyone with the URL to send text to the event:
  - https://desnos.herokuapp.com/your-unique-event-name/if-then/add
  
@@ -105,7 +105,7 @@ The code is such that it is easy to add more two-box events with different promp
 George Mason student Nihaal Prasad contributed "after", with the first line beginning "After," and the second beginning any way one likes:
  - https://desnos.herokuapp.com/demo/after/add
 
-Writer, critic, and scholar Lisa Levy contributed "bookends" with the following suggestion from her teaching: "[How about] first lines or topic sentences on the same subject and see how they fit together. Or first lines and last lines--I spend a lot of time talking about beginnings and endings." Bookends is taken from the idea of first-lines, last-lines.
+Writer, critic, and scholar Lisa Levy contributed "bookends" with the following suggestion from her teaching: "[How about] first lines or topic sentences on the same subject and see how they fit together. Or first lines and last lines--I spend a lot of time talking about beginnings and endings." Bookends implements the idea of first-lines, last-lines.
  - https://desnos.herokuapp.com/demo/bookends/add
 
 I ended up naming the Heroku deployment desnos, rather than Narayanan or language_events, but it doesn’t feel right. Suggestions welcome.
