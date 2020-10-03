@@ -16,8 +16,12 @@ EVENTS = {
         EVENT_TITLE_TEXT: ["language event", "if · then"],
     },
     "after": {
-        TEXTBOXES: {TEXTBOX_KEY("a"): "after", TEXTBOX_KEY("b"): "(...)"},
-        EVENT_TITLE_TEXT: ["language event", "Nihaal Prasad’s “After”"],
+        TEXTBOXES: {TEXTBOX_KEY("a"): "after", TEXTBOX_KEY("b"): "..."},
+        EVENT_TITLE_TEXT: ["language event", "after"],
+    },
+    "bookends": {
+        TEXTBOXES: {TEXTBOX_KEY("a"): "opening line", TEXTBOX_KEY("b"): "closing line"},
+        EVENT_TITLE_TEXT: ["language event", "bookends"],
     },
 }
 
