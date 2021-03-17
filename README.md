@@ -1,10 +1,10 @@
-# Robert Desnos' Language Events
+# Experiment in Free-Tier Poetry Pegagogy
 
-## an Experiment in Free-Tier Poetry Pegagogy
+## Robert Desnos' Language Events
 
 ### designed for the classroom by Vivek Narayanan
 
-with code by scharfmn
+#### code by scharfmn
 
 ## Introduction
 
