@@ -21,7 +21,7 @@ The result that Desnos published included these couplets (also translated):
     If night was endless  
     there would be nothing more, nothing, nothing at all.
 
-    When shoestrings grown in the workers’ gardens  
+    When shoestrings grow in the workers’ gardens  
     railwaymen will blow their noses with sugar tongs.
 
     If tigers should prove grateful to us  
