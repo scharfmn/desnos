@@ -14,8 +14,6 @@ In this version of Desnos' language events, the user creates a unique poetry com
 
 [This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, explained further below.
 
-- 
-
 ## Inspiration
 
 ![original language event 1](https://storage.googleapis.com/mns/desnos_1a.png)
