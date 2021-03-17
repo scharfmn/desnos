@@ -35,11 +35,11 @@ Each sheet of paper for Desnos corresponds to a screen in the application:
 
 ![add](https://storage.googleapis.com/mns/qa3.png)
 
-The app is designed to work without a login and without anyone having to do anything other than come up with the one unique name for the event. It uses the unique name, such as `viveks-class-2020-09-25` or `mike-take-1`, as part of a URL. The name can be anything that can work as part of a [valid URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL).
+The app is designed to work without a login and without anyone having to do anything other than come up with the one unique name for the event. It uses the unique name, such as `viveks-class-2020-09-25` or `mike-take-1`, as part of a URL. The name can be anything that is able to work as part of a [valid URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL).
 
 The application works completely via URL specification: a URL path is associated with a unique id, an event type, and an action.
 
-There are currently four possible kinds of events: **if-then** (based on Desnos' first event), **qa** (based on his second -- [see the Inspiration section](##Inspiration) below, **after** (from an idea of Nihaal Prasad), and **bookends** (from Lisa Levy). 
+There are currently four possible kinds of events: `if-then` (based on Desnos' first event), `qa` (based on his second -- [see the Inspiration section](#inspiration) below, `after` (from an idea of Nihaal Prasad), and `bookends` (from Lisa Levy). 
 
 Each event consists of two main actions that are designed to take place in sequence: `add` and `combine`.
 
