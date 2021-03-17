@@ -6,41 +6,74 @@
 
 #### Code by scharfmn
 
-## Introduction
+## Overview
 
-Desnos is an application version of Robert Desnos' "Language Event 1" and "Language Event 2," adapted for the poetry classroom or workshop.
+Robert Desnos defined the first language event in the following way (translated from the French): 
 
-In this version of Desnos' language events, the user creates a unique poetry composition “event” as part of a class meeting. Students contribute text in real-time, and their contributions are then combined into a poem, also in real-time. Events can be held in-person or remote.
+    Sitting around a table, each participant writes on a sheet of paper, without looking at those of the others, a clause beginning with “if” or “when,” and, on a separate sheet of paper, an independent clause in the conditional or future mood, unrelated to the preceding. Then the sentences are shuffled at random, two by two, & read together. 
+
+The result that Desnos published included these couplets (also translated):
+
+    If night was endless  
+    there would be nothing more, nothing, nothing at all.
+
+    When shoestrings grown in the workers’ gardens  
+    railwaymen will blow their noses with sugar tongs.
+
+    If tigers should prove grateful to us  
+    sharks would volunteer to be used as canoes.
+
+In the web version presented here, the user creates a unique poetry composition event as part of a class meeting. Students contribute text in real-time from their phones or laptops from wherever they are, and their contributions are then combined, randomly, into a poem-in-couplets, also in real-time. Events can be held in-person -- sitting around a table -- or remote.
+
+## Implementation
+
+Each sheet of paper for Desnos corresponds to a screen:
+
+![add](https://storage.googleapis.com/mns/qa1.png)
+
+The app is designed to work without a login and without anyone having to do anything other than come up with the one unique name for the event. It uses the unique name, such as `viveks-class-2020-09-25` or `mike-take-1`, as part of a URL. The name should be anything that can work within a [valid URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL).
+
+There are currently four possible kinds of events: **if-then** (based on Desnos' first event), **qa** (based on his second -- [see the Inspiration section](##Inspiration) below, **after** (from an idea of Nihaal Prasad), and **bookends** (from Lisa Levy). 
+
+Each event consists of two main actions that are designed to take place in sequence: `add` and `combine`.
+
+The application works completely via URL specification: a URL path is associated with a unique id, an event type, and an action.
+
+![qa2](https://storage.googleapis.com/mns/qa2.png)
+
+#### "add" adds the texts for an event
+
+The uniqueness of each hosted "event" is established via the path. To hold an event, make up and id, choose an event type, and send around an `add` URL to the participants:
+
+ - https://desnos.herokuapp.com/unique-event-name/if-then/add
+
+Replace `unique-event-name` with your unique id, and you're all set for an `if-then` event.
+
+Each time you want to start a new event, create a new id, replacing the spot in the URL's path just after the domain with with anything you like:
+
+ - https://desnos.herokuapp.com/new-event-three/qa/add
+
+ - https://desnos.herokuapp.com/event-four/qa/add
+
+#### "combine" combines the text into a poem
+
+![combine](https://storage.googleapis.com/mns/test-combine.png)
 
 [This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, explained further below.
-
-## Inspiration
-
-![original language event 1](https://storage.googleapis.com/mns/desnos_1a.png)
-
-![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
-
-## Directions
-
-There are two main possible events to host, one based on Language Event 1 and one based on Language Event 2. The uniqueness of each hosted "event" is established via a set of three URLs. The three URLs are anchored by a unique id that you make up on the spot, and distribute to the participants in the event. The one you want to start with is the "add" endpoint. Create a unique id that is valid for URL-embedded text, and create the event URL like this:
-
- - https://desnos.herokuapp.com/{your-unique-event-name}/if-then/add
-
-Replace _your-unique-event-name_ with your unique id, and you're all set.
 
 ## Language Event 1
 
 ### if (or when) → then
 
-This event is identified by the unique name or ID that you give it, and the "if-then" in the URL's path. Each action that can be taken within the event is specified as the last part of the URL path.
+This event is identified by the unique name or ID that you give it, and the `if-then` in the URL's path. Each action that can be taken within the event is specified as the last part of the URL path. The `show` endpoints show all of the text that has been contributed.
 
-"Add" endpoints allow anyone with the URL to send text to the event:
+"Add":
  - https://desnos.herokuapp.com/unique-event-name/if-then/add
  
-"Combine" endpoints randomly combine the text sent into the event in couplets: 
+"Combine": 
  - https://desnos.herokuapp.com/unique-event-name/if-then/combine
  
-"Show" endpoints show all of the text that has been contributed:
+"Show":
  - https://desnos.herokuapp.com/unique-event-name/if-then/show
 
 ## Language Event 2
@@ -60,25 +93,11 @@ Language Event two works in exactly the same way, but has "qa" in the path to te
 
 ### Notes
 
-The app is designed to work without a login and without anyone having to do anything other than come up with the one unique name for the event (such as _viveks-class-2020-09-25_ or _mike-take-1_, to give more examples)
+ - All text received for the session is used once before it can appear again in any combine operation.
 
-Each time you want to start a new session, or anytime you want to keep a set of responses together, create a new id, replacing _your-unique-event-name_ with anything you like: 
+ - Each user using the "combine" endpoint will see a different version of the poem. Usually there is a set period where people enter text before a separate "combine" point where a chosen person presents the "combine" page.
 
- - https://desnos.herokuapp.com/birds-now/qa/add
-
- - https://desnos.herokuapp.com/happy-day/qa/add 
-
-Changing _our-unique-event-name_ to whatever makes sense for you (as long as it is valid for a URL), allows your class's event to be just your class, but the only security is the uniqueness of the name itself -- anyone with the URL will be able to access the event
-
-All text received for the session is used once before it can appear again in any combine operation
-
-Each user using the "combine" endpoint will see a different version of the poem
-
-Usually there is a set period where people enter text before a separate "combine" point where a chosen person presents the "combine" page
-
-The "show" endpoints show all of the text that has been contributed
-
-There is a pause button on the "combine" pages, and also a facility for copy-pasting the poem into the text clipboard for pasting and savig into a document
+ - There is a pause button on the "combine" pages, and also a facility for copy-pasting the poem into the text clipboard for pasting and savig into a document
 
 ## Background
 
@@ -121,3 +140,15 @@ I ended up naming the Heroku deployment desnos, rather than Narayanan or languag
 The current endpoints should still be deployed and available for up 1000 hours of use a month. The app "sleeps" after 30 mins of inactivity, and takes about 20 seconds to come up on an initial request following an inactive period. Free-tier Heroku Redis says that it does not persist: it self-erases after 24 hours if one does not upgrade to a non-free tier. 
 
 Enjoy!
+
+## Inspiration
+
+To get a better sense of what a language event is, let's look at what Desnos actually published as examples. 
+
+The first event ("If... When"): 
+
+![original language event 1](https://storage.googleapis.com/mns/desnos_1a.png)
+
+The second event ("QA"):
+
+![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
