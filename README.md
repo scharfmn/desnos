@@ -99,7 +99,7 @@ Language Event two works in exactly the same way, but has "qa" in the path to te
 "Show":
  - https://desnos.herokuapp.com/your-unique-event-name/qa/show
 
-### Notes
+## Notes
 
  - All text received for the session is used once before it can appear again in any combine operation.
 
