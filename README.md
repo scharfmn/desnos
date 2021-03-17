@@ -135,7 +135,7 @@ After a demo for Narayanan, he asked that I add an easy way for him to cut the d
 
 The first time Narayanan used the app in the classroom, in the Fall of 2018, the pseudo-random line picking operation gave a lot of repeated entrees, and some entries didn’t get used at all. This disappointed some students greatly. For the second iteration, I changed the line picking such that once a pseudo-random element has been chosen for combination and display, it cannot not be chosen again until all the elements from that set of responses have been shown. That fixed it.
 
-The code is such that it is easy to add more two-box events with different prompts (![send a feature request or pull request!](https://github.com/scharfmn/desnos/issues)).
+The code is such that it is easy to add more two-box events with different prompts. If you have an idea for an event, please [send a feature request or pull request](https://github.com/scharfmn/desnos/issues).
 
 George Mason student Nihaal Prasad contributed "after" events, with the first line beginning "After," and the second beginning any way one likes:
  - https://desnos.herokuapp.com/demo/after/add
