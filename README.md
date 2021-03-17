@@ -10,7 +10,11 @@
 
 Robert Desnos defined the first language event in the following way (translated from the French): 
 
-    Sitting around a table, each participant writes on a sheet of paper, without looking at those of the others, a clause beginning with “if” or “when,” and, on a separate sheet of paper, an independent clause in the conditional or future mood, unrelated to the preceding. Then the sentences are shuffled at random, two by two, & read together. 
+    Sitting around a table, each participant writes on a sheet of paper,  
+    without looking at those of the others, a clause beginning with “if”  
+    or “when,” and, on a separate sheet of paper, an independent clause  
+    in the conditional or future mood, unrelated to the preceding. Then  
+    the sentences are shuffled at random, two by two, & read together.  
 
 The result that Desnos published included these couplets (also translated):
 
@@ -29,15 +33,17 @@ In the web version presented here, the user creates a unique poetry composition 
 
 Each sheet of paper for Desnos corresponds to a screen:
 
-![add](https://storage.googleapis.com/mns/qa1.png)
+![add](https://storage.googleapis.com/mns/qa3.png)
 
 The app is designed to work without a login and without anyone having to do anything other than come up with the one unique name for the event. It uses the unique name, such as `viveks-class-2020-09-25` or `mike-take-1`, as part of a URL. The name should be anything that can work within a [valid URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL).
+
+The application works completely via URL specification: a URL path is associated with a unique id, an event type, and an action.
 
 There are currently four possible kinds of events: **if-then** (based on Desnos' first event), **qa** (based on his second -- [see the Inspiration section](##Inspiration) below, **after** (from an idea of Nihaal Prasad), and **bookends** (from Lisa Levy). 
 
 Each event consists of two main actions that are designed to take place in sequence: `add` and `combine`.
 
-The application works completely via URL specification: a URL path is associated with a unique id, an event type, and an action.
+So putting it all together into a URL:
 
 ![qa2](https://storage.googleapis.com/mns/qa2.png)
 
@@ -60,6 +66,8 @@ Each time you want to start a new event, create a new id, replacing the spot in 
 ![combine](https://storage.googleapis.com/mns/test-combine.png)
 
 [This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, explained further below.
+
+The `show` endpoint [shows all of the text that has been contributed](https://desnos.herokuapp.com/demo/qa/combine) to an event. It does not identify contributors.
 
 ## Language Event 1
 
@@ -145,10 +153,6 @@ Enjoy!
 
 To get a better sense of what a language event is, let's look at what Desnos actually published as examples. 
 
-The first event ("If... When"): 
-
 ![original language event 1](https://storage.googleapis.com/mns/desnos_1a.png)
-
-The second event ("QA"):
 
 ![original language event 2](https://storage.googleapis.com/mns/desnos_2.png)
