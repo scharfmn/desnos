@@ -39,7 +39,7 @@ The app is designed to work without a login and without anyone having to do anyt
 
 The application works completely via URL specification: a URL path is associated with a unique id, an event type, and an action.
 
-There are currently four possible kinds of events: `if-then` (based on Desnos' first event), `qa` (based on his second -- [see the Inspiration section](#inspiration) below, `after` (from an idea of Nihaal Prasad), and `bookends` (from Lisa Levy). 
+There are currently four possible kinds of events: `if-then` (based on Desnos' first event), `qa` (based on his second -- [see the Inspiration section](#inspiration) below), `after` (from an idea of Nihaal Prasad), and `bookends` (from Lisa Levy). 
 
 Each event consists of two main actions that are designed to take place in sequence: `add` and `combine`.
 
