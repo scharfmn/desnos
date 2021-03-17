@@ -65,7 +65,7 @@ Each time you want to start a new event, create a new id, replacing the spot in 
 
 ![combine](https://storage.googleapis.com/mns/test-combine.png)
 
-[This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, explained further below.
+[This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, [explained a bit more below](#language-event-2).
 
 The `show` endpoint [shows all of the text that has been contributed](https://desnos.herokuapp.com/demo/qa/combine) to an event. It does not identify contributors.
 
