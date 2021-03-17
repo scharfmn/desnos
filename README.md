@@ -31,7 +31,7 @@ In the web version presented here, the user creates a unique poetry composition 
 
 ## Implementation
 
-Each sheet of paper for Desnos corresponds to a screen:
+Each sheet of paper for Desnos corresponds to a screen in the application:
 
 ![add](https://storage.googleapis.com/mns/qa3.png)
 
