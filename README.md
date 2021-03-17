@@ -8,13 +8,13 @@
 
 ## Introduction
 
-Desnos is an application version of Robert Desnos' Language Event 1 and Language Event 2 adapted for the classroom
+Desnos is an application version of Robert Desnos' "Language Event 1" and "Language Event 2," adapted for the poetry classroom or workshop.
 
-In this version of Desnos' language events, the user creates a specific language “event” for a class meeting. Students contribute text in real-time, and their contributions are then combined into a poem in real-time. Can be done in-person or remote.
+In this version of Desnos' language events, the user creates a unique poetry composition “event” as part of a class meeting. Students contribute text in real-time, and their contributions are then combined into a poem, also in real-time. Events can be held in-person or remote.
 
-Try this one (which shows pre-loaded text as a demo):
+[This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, explained further below.
 
-- https://desnos.herokuapp.com/demo/qa/combine
+- 
 
 ## Inspiration
 
