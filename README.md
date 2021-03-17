@@ -2,9 +2,9 @@
 
 ## Robert Desnos' Language Events
 
-### designed for the classroom by Vivek Narayanan
+#### Designed for the classroom by Vivek Narayanan
 
-#### code by scharfmn
+#### Code by scharfmn
 
 ## Introduction
 
