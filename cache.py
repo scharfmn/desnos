@@ -8,9 +8,7 @@ def get_cache():
             redis-server /usr/local/etc/redis.conf
     '''
     if os.environ.get("REDIS_URL"):  # Heroku
-        cache = redis.from_url(
-            os.environ["REDIS_URL"], charset="utf-8", decode_responses=True
-        )
+        cache = redis.from_url(os.environ["REDIS_URL"]) #, charset="utf-8", decode_responses=True
     elif os.environ.get("FLASK_APP"):  # local
         cache = redis.StrictRedis(charset="utf-8", decode_responses=True)
     else:  # Docker (with redis on same server)
