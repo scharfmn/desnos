@@ -1,4 +1,4 @@
-# Experiments in Free-Tier Poetry Pegagogy
+# Experiments in ~~Free-Tier~~ Poetry Pegagogy
 
 ## Robert Desnos' Language Events
 
