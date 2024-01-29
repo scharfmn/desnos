@@ -23,6 +23,10 @@ EVENTS = {
         TEXTBOXES: {TEXTBOX_KEY("a"): "opening line", TEXTBOX_KEY("b"): "closing line"},
         EVENT_TITLE_TEXT: ["language event", "bookends"],
     },
+    "two-lines": {
+        TEXTBOXES: {TEXTBOX_KEY("a"): "line 1", TEXTBOX_KEY("b"): "line 2"},
+        EVENT_TITLE_TEXT: ["language event", "line 1  · line 2"],
+    },
 }
 
 TEST_DATA = {
