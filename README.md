@@ -39,7 +39,7 @@ The app is designed to work without a login and without anyone having to do anyt
 
 The application works completely via URL specification: a URL path is associated with a unique id, an event type, and an action.
 
-There are currently four possible kinds of events: `if-then` (based on Desnos' first event), `qa` (based on his second -- [see the Inspiration section](#inspiration) below), `after` (from an idea of Nihaal Prasad), and `bookends` (from Lisa Levy). 
+There are currently five possible kinds of events: `if-then` (based on Desnos' first event), `qa` (based on his second -- [see the Inspiration section](#inspiration) below), `after` (from an idea of Nihaal Prasad), `bookends` (from Lisa Levy), and two-lines (Vivek Narayanan). 
 
 Each event consists of two main actions that are designed to take place in sequence: `add` and `combine`.
 
@@ -51,23 +51,23 @@ So putting it all together into a URL:
 
 The uniqueness of each hosted "event" is established via the path. To hold an event, make up and id, choose an event type, and send around an `add` URL to the participants:
 
- - https://desnos.herokuapp.com/unique-event-name/if-then/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/unique-event-name/if-then/add
 
 Replace `unique-event-name` with your unique id, and you're all set for an `if-then` event.
 
 Each time you want to start a new event, create a new id, replacing the spot in the URL's path just after the domain with with anything you like:
 
- - https://desnos.herokuapp.com/new-event-three/qa/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/new-event-three/qa/add
 
- - https://desnos.herokuapp.com/event-four/qa/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/event-four/qa/add
 
 #### "combine" combines the text into a poem
 
 ![combine](https://storage.googleapis.com/mns/test-combine.png)
 
-[This demo](https://desnos.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, [explained a bit more below](#language-event-2).
+[This demo](https://desnos-5ec69d7d327d.herokuapp.com/demo/qa/combine) shows the last step of an event: the text unspooling in real-time combination. It uses pre-loaded text to generate a "QA" event, [explained a bit more below](#language-event-2).
 
-The `show` endpoint [shows all of the text that has been contributed](https://desnos.herokuapp.com/demo/qa/combine) to an event. It does not identify contributors.
+The `show` endpoint [shows all of the text that has been contributed](https://desnos-5ec69d7d327d.herokuapp.com/demo/qa/combine) to an event. It does not identify contributors.
 
 ## Language Event 1
 
@@ -76,13 +76,13 @@ The `show` endpoint [shows all of the text that has been contributed](https://de
 This event is identified by the unique name or ID that you give it, and the `if-then` in the URL's path. Each action that can be taken within the event is specified as the last part of the URL path. The `show` endpoints show all of the text that has been contributed.
 
 "Add":
- - https://desnos.herokuapp.com/unique-event-name/if-then/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/unique-event-name/if-then/add
  
 "Combine": 
- - https://desnos.herokuapp.com/unique-event-name/if-then/combine
+ - https://desnos-5ec69d7d327d.herokuapp.com/unique-event-name/if-then/combine
  
 "Show":
- - https://desnos.herokuapp.com/unique-event-name/if-then/show
+ - https://desnos-5ec69d7d327d.herokuapp.com/unique-event-name/if-then/show
 
 ## Language Event 2
 
@@ -91,13 +91,13 @@ This event is identified by the unique name or ID that you give it, and the `if-
 Language Event two works in exactly the same way, but has "qa" in the path to tell the application what kind of event it is.
 
 "Add":
- - https://desnos.herokuapp.com/your-unique-event-name/qa/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/your-unique-event-name/qa/add
  
 "Combine": 
- - https://desnos.herokuapp.com/your-unique-event-name/qa/combine
+ - https://desnos-5ec69d7d327d.herokuapp.com/your-unique-event-name/qa/combine
 
 "Show":
- - https://desnos.herokuapp.com/your-unique-event-name/qa/show
+ - https://desnos-5ec69d7d327d.herokuapp.com/your-unique-event-name/qa/show
 
 ## Notes
 
