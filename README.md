@@ -138,10 +138,10 @@ The first time Narayanan used the app in the classroom, in the Fall of 2018, the
 The code is such that it is easy to add more two-box events with different prompts. If you have an idea for an event, please [send a feature request or pull request](https://github.com/scharfmn/desnos/issues).
 
 George Mason student Nihaal Prasad contributed "after" events, with the first line beginning "After," and the second beginning any way one likes:
- - https://desnos.herokuapp.com/demo/after/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/demo/after/add
 
 Writer, critic, and scholar Lisa Levy contributed events as "bookends" with the suggestion to take "first lines or topic sentences on the same subject and see how they fit together. Or first lines and last lines--I spend a lot of time talking about beginnings and endings." The Bookends event implements the idea of first-lines, last-lines.
- - https://desnos.herokuapp.com/demo/bookends/add
+ - https://desnos-5ec69d7d327d.herokuapp.com/demo/bookends/add
 
 I ended up naming the Heroku deployment desnos, rather than Narayanan or language_events, but it doesn’t feel right. Suggestions welcome.
 
