@@ -51,6 +51,32 @@ def text_input(instance_id, event_id):
     )
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.route("/", methods=["GET"])
+@app.route("/htb", methods=["GET"])
+def htb():
+    return render_template("htb.html")
+
+
+@app.route("/tables", methods=["GET"])
+def tables():
+    return render_template("tables.html")
+
+
+@app.route("/tables", methods=["GET"])
+def ingirum():
+    return render_template("ingirum.html")
+
+
+@app.route("/tables", methods=["GET"])
+def posted():
+    return render_template("posted.html")
+
+
 @app.route("/<instance_id>/<event_id>/combine", methods=["GET"])
 def combine(instance_id, event_id):
     text_to_combine = retrieve_instance_data(instance_id, event_id)
