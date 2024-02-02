@@ -66,12 +66,12 @@ def htb():
 def tables():
     return render_template("tables.html")
 
-
+@app.route("/ingirum.html", methods=["GET"])
 @app.route("/ingirum", methods=["GET"])
 def ingirum():
     return render_template("ingirum.html")
 
-
+@app.route("/posted.html", methods=["GET"])
 @app.route("/posted", methods=["GET"])
 def posted():
     return render_template("posted.html")
