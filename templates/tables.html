@@ -91,7 +91,7 @@
   function add_q() {
     $(".answer-button").removeClass("answer-button");
     $(".current-answer").removeClass("current-answer");
-    let query = '<span>REPLACE</span><br>'.replace('REPLACE', String(multiplier) + " x " + String(multiplicand));
+    let query = '<span>&nbsp;REPLACE</span><br>'.replace('REPLACE', String(multiplier) + " x " + String(multiplicand));
     let answer_box = `
         <div class="input-group w-50">
           <input type="text" class="form-control current-answer" placeholder="answer" aria-label="Your Answer" aria-describedby="basic-addon2">
@@ -110,10 +110,10 @@
   function do_dialogue() {
     let answer = $('.current-answer').val();
     if (check_answer(answer) == true) {
-      $('#box-sets').append("Yes! &#129412; <br>");
+      $('#box-sets').append("Yes! &#129412; <br><br>");
       update_multiplicand();
     } else {
-      $('#box-sets').append("Try again! &#128158; <br>");
+      $('#box-sets').append("Try again! &#128158; <br><br>");
     }
     if (typeof multiplicand !== 'undefined') {
       add_q();
